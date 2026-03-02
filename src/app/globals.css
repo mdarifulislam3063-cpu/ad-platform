@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  /* প্রাইমারি কালার */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
+  /* সেকেন্ডারি কালার */
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #e2e8f0;
+  --color-secondary-300: #cbd5e1;
+  --color-secondary-400: #94a3b8;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+
+  /* ফন্ট */
+  --font-sans: 'Inter', sans-serif;
+
+  /* শ্যাডো */
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-secondary-50);
+    color: var(--color-secondary-900);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background-color: var(--color-primary-600);
+    color: white;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-700);
+    box-shadow: var(--shadow-hover);
+  }
+  .btn-primary:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--shadow-soft), 0 0 #0000;
+    --tw-ring-color: var(--color-primary-500);
+    --tw-ring-offset-width: 2px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-secondary-300);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: var(--color-secondary-700);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-secondary-50);
+  }
+  .btn-secondary:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--shadow-soft), 0 0 #0000;
+    --tw-ring-color: var(--color-primary-500);
+    --tw-ring-offset-width: 2px;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .input-field {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-secondary-300);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-soft);
+    outline: none;
+    transition: all 0.2s;
+  }
+  .input-field:focus {
+    --tw-ring-color: var(--color-primary-500);
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--shadow-soft), 0 0 #0000;
+    border-color: transparent;
+  }
+}
