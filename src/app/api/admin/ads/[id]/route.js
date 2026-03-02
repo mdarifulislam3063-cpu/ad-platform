@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '../../../auth/[...nextauth]/route'
 import { prisma } from '@/lib/prisma'
 
+export const dynamic = 'force-dynamic'
 export async function GET(req, { params }) {
   const session = await getServerSession(authOptions)
   if (!session || session.user.role !== 'admin') {
